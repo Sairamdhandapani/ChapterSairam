@@ -19,8 +19,7 @@
 //Address
 LiquidCrystal_I2C lcd(0x3F, 16, 2);
 
-const char* server = "52.66.114.79";
-String apiKey = "UNY9HLZSMGEUGOK4";//Channel 8, Compost monitor
+
 
 const char WEBSITE[] = "api.pushingbox.com"; //pushingbox API server
 const String devid = "vF2991BD53E2C4B1"; //device ID from Pushingbox 
@@ -88,7 +87,7 @@ void dsb() {
   Serial.print("DSB Data");
   Serial.println("Temp_0: ");
   Serial.print(temp_0);
-  /*Serial.println("Temp_1: ");
+  Serial.println("Temp_1: ");
   Serial.print(temp_1);
 
   Serial.println("Temp_2:");
@@ -119,12 +118,12 @@ void showonlcd() {
   lcd.setCursor(0,1);
   lcd.print("Bin Temp(C):");
   lcd.print(temp_0);
-  /*lcd.setCursor(0, 2);
+  lcd.setCursor(0, 2);
   lcd.print("Temp_1)C):");
   lcd.print(temp_1);
   lcd.setCursor(0, 3);
   lcd.print("Temp_2(C):");
-  lcd.print(temp_2);*/
+  lcd.print(temp_2);
 }
 
 void senddata() {
@@ -132,8 +131,8 @@ void senddata() {
     String postStr = apiKey;
     postStr += "&field1=";
     postStr += String(temp_0);
-    //postStr += "&field2=";
-   /* postStr += String(temp_1);
+    postStr += "&field2=";
+   postStr += String(temp_1);
     postStr += "&field3=";
     postStr += String(temp_2);*/
     postStr += "&field4=";
